@@ -1,5 +1,5 @@
 from PIL import Image
-from filters import DarkFilter, BrightFilter, InverseFilter
+from filters import DarkFilter, BrightFilter, InverseFilter, apply_filter
 import os
 
 def main():
@@ -10,9 +10,9 @@ def main():
     ]
 
     filters = [
-        BrightFilter(),
-        DarkFilter(),
-        InverseFilter()
+        BrightFilter,
+        DarkFilter,
+        InverseFilter,
     ]
 
     print("Добро пожаловать")
@@ -37,7 +37,7 @@ def main():
             choice = input("Некорректный ввод. Попробуйте еще раз >>> ")
 
         filt = filters[int(choice)]
-        img = filt.apply_to_image(img)
+        img = apply_filter(img, filt)
 
         img.show()
         answer = input("Еще раз? (да/нет): ")
@@ -47,5 +47,5 @@ def main():
 
         is_finished = answer == 'нет'
 
-if name == "main":
+if __name__ == "__main__":
     main()
