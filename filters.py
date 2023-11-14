@@ -1,7 +1,7 @@
 from PIL import Image
 
-# img = Image.open("dog.jpeg").convert("L")
-# width, height = img.size
+img = Image.open("dog.jpeg").convert("L")
+width, height = img.size
 def DarkFilter(pixel: int) -> int:
     if pixel >= 170 and pixel <= 255:
         pixel -= 75
