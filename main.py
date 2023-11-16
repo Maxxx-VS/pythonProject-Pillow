@@ -1,18 +1,24 @@
 from PIL import Image
-from filters import DarkFilter, BrightFilter, InverseFilter, apply_filter
+from filters import DarkFilter, BrightFilter, RedFilter, GreenFilter, BlueFilter, Drugs_eye, apply_filter
 import os
 
 def main():
     filter_names = [
         "Увеличить яркость",
         "Уменьшить яркость",
-        "Инверсия"
+        "Красный фильтр",
+        "Зеленый фильтр",
+        "Синий фильтр",
+        "Наркоманские глаза",
     ]
 
     filters = [
         BrightFilter,
         DarkFilter,
-        InverseFilter,
+        RedFilter,
+        GreenFilter,
+        BlueFilter,
+        Drugs_eye,
     ]
 
     print("Добро пожаловать")
@@ -24,7 +30,7 @@ def main():
         while not os.path.exists(path):
             path = input("Файл не найден. Попробуйте еще раз >>> ")
 
-        img = Image.open(path).convert('L')
+        img = Image.open(path).convert('RGB')
 
         print("Какой фильтр хотите применить >>> ?")
 
