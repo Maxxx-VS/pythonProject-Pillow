@@ -4,8 +4,8 @@ import os
 
 def main():
     filter_names = [
-        "Увеличить яркость",
         "Уменьшить яркость",
+        "Увеличить яркость",
         "Красный фильтр",
         "Зеленый фильтр",
         "Синий фильтр",
@@ -13,8 +13,8 @@ def main():
     ]
 
     filters = [
-        BrightFilter,
         DarkFilter,
+        BrightFilter,
         RedFilter,
         GreenFilter,
         BlueFilter,

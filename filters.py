@@ -11,6 +11,7 @@ def DarkFilter(r: int, g: int, b: int) -> tuple[int, int, int]:
         result = [int(r/3), int(g/3), int(b/3)]
     return tuple(result)
 
+
 def BrightFilter(r: int, g: int, b: int) -> tuple[int, int, int]:
     result = []
     for color in (r, g, b):
@@ -54,4 +55,5 @@ def apply_filter(img: Image.Image, filt) -> Image.Image:
             r,g,b = img.getpixel((i, j))
             new_pixel = filt(r,g,b)
             img.putpixel((i, j), new_pixel)
+    img.save('New_img/new.jpg')
     return img
